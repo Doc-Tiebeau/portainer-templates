@@ -1,0 +1,189 @@
+{
+	"version": "2",
+	"templates": [
+		{
+			"categories": [
+				"Tools",
+				"Web",
+				"Other"
+			],
+			"description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/heimdall:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/heimdall-icon.png",
+			"name": "heimdall",
+			"platform": "linux",
+			"ports": [
+				"80/tcp",
+				"443/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Heimdall",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Heimdall",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Voice",
+				"Chat"
+			],
+			"description": "Mumble is a voicechat program for gamers written on top of Qt and Opus. Murmur is the server backend for Mumble.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "goofball222/murmur:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/Mumble-logo.png",
+			"name": "murmur",
+			"platform": "linux",
+			"ports": [
+				"64738:64738/tcp",
+				"64738:64738/udp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Murmur",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/etc/localtime:ro",
+					"container": "/etc/localtime"
+				},
+				{
+					"bind": "/portainer/Files/Config/Murmur",
+					"container": "/opt/murmur/config"
+				},
+				{
+					"bind": "/portainer/Files/Murmur/data",
+					"container": "/opt/murmur/data"
+				},
+				{
+					"bind": "/portainer/Files/Murmur/log",
+					"container": "/opt/murmur/log"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Web",
+				"Proxy"
+			],
+			"description": "Nginx is a web server with a strong focus on high concurrency, performance and low memory usage. It can also act as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and an HTTP cache.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/nginx:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/nginx-icon.png",
+			"name": "nginx",
+			"platform": "linux",
+			"ports": [
+				"80/tcp",
+				"443/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Nginx",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Nginx",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders"
+			],
+			"description": "Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/transmission:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/transmission-icon.png",
+			"name": "transmission",
+			"platform": "linux",
+			"ports": [
+				"9091:9091/tcp",
+				"51413:51413/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Transmission",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Transmission",
+					"container": "/config"
+				},
+				{
+					"bind": "/portainer/Files/Downloads",
+					"container": "/downloads"
+				},
+				{
+					"container": "/watch"
+				}
+			]
+		},
+		{
+			"type": 3,
+			"title": "Proxmox Backup Server",
+			"name": "pbs",
+			"description": "Proxmox Backup Server running as a docker image",
+			"note": "Go to github repo for documentation",
+			"categories": [
+				"backup"
+			],
+			"platform": "linux",
+			"logo": "https://notamax.be/wp-content/uploads/2020/12/proxmox_backup_server_intro.png",
+			"repository": {
+				"url": "https://github.com/Doc-Tiebeau/pbs-docker/tree/dev",
+				"stackfile": "docker-compose.yml"
+			}
+		}
+  ]
+}
