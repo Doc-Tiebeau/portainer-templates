@@ -191,7 +191,7 @@
 				"Web"
 			],
 			"description": "Traefik",
-			"image": "traefik/traefik:latest",
+			"image": "traefik:latest",
 			"logo": "https://github.com/Doc-Tiebeau/portainer-templates/blob/dev/resources/logo/traefik_logo.png",
 			"name": "traefik",
 			"platform": "linux",
