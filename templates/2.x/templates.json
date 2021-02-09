@@ -184,6 +184,31 @@
 				"url": "https://github.com/Doc-Tiebeau/pbs-docker/tree/dev",
 				"stackfile": "docker-compose.yml"
 			}
+		},
+		{
+			"categories": [
+				"Tools",
+				"Web"
+			],
+			"description": "Traefik",
+			"image": "traefik/traefik:latest",
+			"logo": "https://github.com/traefik/traefik/blob/master/docs/content/assets/img/traefik.logo.png",
+			"name": "traefik",
+			"platform": "linux",
+			"ports": [
+				"80/tcp",
+				"443/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Traefik",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/etc/traefik/traefik.toml",
+					"container": "$PWD/traefik.toml"
+				}
+			]
 		}
+
   ]
 }
