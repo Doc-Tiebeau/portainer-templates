@@ -192,7 +192,7 @@
 			],
 			"description": "Traefik",
 			"image": "traefik/traefik:latest",
-			"logo": "https://github.com/traefik/traefik/blob/master/docs/content/assets/img/traefik.logo.png",
+			"logo": "https://doc.traefik.io/traefik/v1.7/img/traefik.logo.png",
 			"name": "traefik",
 			"platform": "linux",
 			"ports": [
